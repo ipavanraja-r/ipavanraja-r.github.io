@@ -1,0 +1,32 @@
+{
+  "generated": "2026-11-14",
+  "count": 2,
+  "posts": [
+    {
+      "slug": "5g-redcap-reduced-capability-reduced-margin",
+      "title": "5G RedCap: reduced capability, reduced margin",
+      "date": "2026-11-14",
+      "tags": [
+        "5g",
+        "iot",
+        "research"
+      ],
+      "summary": "RedCap trims 5G down for wearables, sensors and cameras. The cryptography stays the same, but the safety margins shrink. A field guide to where that matters.",
+      "readingTime": 3,
+      "words": 710,
+      "featured": true
+    },
+    {
+      "slug": "hello-world",
+      "title": "Transmission #1: why this log exists",
+      "date": "2026-11-12",
+      "tags": [
+        "meta",
+        "research"
+      ],
+      "summary": "A short note on what this blog is for. Field notes from the lab, written down before they turn into papers or disappear into a terminal history.",
+      "readingTime": 1,
+      "words": 259
+    }
+  ]
+}

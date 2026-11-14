@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academy · coming soon · p1r3x</title>
+  <meta name="description" content="The p1r3x Academy, structured cybersecurity courses for students by I Pavanraja, is coming soon.">
+  <meta name="theme-color" content="#05080a">
+  <link rel="icon" type="image/png" href="../assets/img/profile.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .soon { min-height: calc(100vh - 160px); display: grid; align-content: center; padding-top: calc(var(--nav-h) + 40px); }
+    .soon-title { font-family: var(--display); font-weight: 700; text-transform: uppercase; color: var(--white);
+      font-size: clamp(44px, 8vw, 104px); line-height: .95; letter-spacing: 1px; margin: 14px 0 18px; }
+    .soon-title .hl { color: #b26bff; text-shadow: 0 0 22px rgba(178, 107, 255, .55); }
+    .soon-sub { max-width: 640px; color: var(--text); font-size: 15.5px; }
+    .soon-term { margin-top: 36px; max-width: 760px; font-size: 13.5px; }
+    .soon-term .body { padding: 18px 20px 20px; line-height: 1.85; white-space: pre-wrap; word-break: break-word; }
+    .soon-term .p { color: var(--green); }
+    .soon-term .e { color: var(--amber); }
+    .soon-term .ok { color: var(--green); }
+    .soon-term .pur { color: #b26bff; }
+    .bar { display: inline-block; width: min(320px, 60vw); height: 10px; border: 1px solid var(--line-strong); vertical-align: middle; position: relative; overflow: hidden; margin: 0 8px; }
+    .bar i { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, #b26bff, var(--green)); animation: build 3.2s ease-out forwards; box-shadow: 0 0 10px rgba(178, 107, 255, .6); }
+    @keyframes build { to { width: 68%; } }
+    .soon-what { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; max-width: 900px; }
+    .soon-what div { border: 1px solid var(--line); background: var(--panel); padding: 16px 18px; font-size: 13px; color: var(--text-dim); }
+    .soon-what b { display: block; color: var(--white); font-family: var(--display); font-size: 17px; margin-bottom: 4px; }
+    .soon-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    @media (max-width: 760px) { .soon-what { grid-template-columns: 1fr; } }
+    @media (prefers-reduced-motion: reduce) { .bar i { width: 68%; animation: none; } }
+  </style>
+</head>
+
+<body>
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="crt" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="../index.html" class="logo" aria-label="p1r3x home">p1r<span class="three">3</span>x<span class="cursor">_</span></a>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html#about"><span>01.</span>whoami</a></li>
+        <li><a href="../index.html#research"><span>02.</span>research</a></li>
+        <li><a href="../index.html#experience"><span>03.</span>experience</a></li>
+        <li><a href="../index.html#projects"><span>04.</span>projects</a></li>
+        <li><a href="../index.html#arsenal"><span>05.</span>arsenal</a></li>
+        <li><a href="../certifications.html"><span>06.</span>certs</a></li>
+        <li><a href="./" class="active"><span>07.</span>academy</a></li>
+        <li><a href="../blog/"><span>08.</span>blog</a></li>
+        <li><a href="../index.html#contact"><span>09.</span>contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-status"><span class="dot"></span><span>BUILD · IN PROGRESS</span><span id="clock">--:--:-- IST</span></div>
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle menu" aria-expanded="false">[ menu ]</button>
+  </header>
+
+  <main>
+    <section class="soon">
+      <span class="sec-id" style="justify-self:start">0x0B // ~/academy</span>
+      <h1 class="soon-title">Academy<br><span class="hl">coming soon.</span></h1>
+      <p class="soon-sub">Structured cybersecurity courses for students: a full syllabus for every subject,
+        with lessons that read like chapters of a book. The first course is being written right now.</p>
+
+      <div class="soon-term panel corners">
+        <div class="panel-bar"><i></i><i></i><i></i><span class="title">student@academy: ~</span></div>
+<div class="body"><span class="p">student@academy:~$</span> sudo apt install academy
+Reading package lists… Done
+Building dependency tree… <span class="bar"><i></i></span><span class="pur">compiling courses</span>
+<span class="e">E: Package 'academy' is not available yet.</span>
+<span class="e">E: It's being written, lesson by lesson. Check back soon.</span>
+<span class="p">student@academy:~$</span> <span class="typed-cursor"></span></div>
+      </div>
+
+      <div class="soon-what">
+        <div><b>Courses</b>Hands-on subjects from web exploitation to 5G &amp; IoT security.</div>
+        <div><b>Syllabus first</b>Every course has its full chapter-by-chapter outline up front.</div>
+        <div><b>Read like a book</b>Lessons, objectives, labs and progress tracking per chapter.</div>
+      </div>
+
+      <div class="soon-cta">
+        <a class="btn solid" href="../blog/">Read the Journal meanwhile ▸</a>
+        <a class="btn" href="../index.html#contact">Get notified: contact me</a>
+        <a class="btn" href="../index.html">← Portfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+<pre class="ascii" aria-hidden="true">██████╗  ██╗██████╗ ██████╗ ██╗  ██╗
+██╔══██╗███║██╔══██╗╚════██╗╚██╗██╔╝
+██████╔╝╚██║██████╔╝ █████╔╝ ╚███╔╝
+██╔═══╝  ██║██╔══██╗ ╚═══██╗ ██╔██╗
+██║      ██║██║  ██║██████╔╝██╔╝ ██╗
+╚═╝      ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝</pre>
+    <p>© <span id="year">2026</span> I Pavanraja (p1r3x) · <a href="../index.html">portfolio</a> · <a href="../certifications.html">credentials</a> · <a href="./">academy</a> · <a href="../blog/">journal</a></p>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

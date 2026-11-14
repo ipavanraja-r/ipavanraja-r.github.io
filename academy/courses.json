@@ -1,0 +1,189 @@
+{
+  "generated": "2026-11-14",
+  "courses": [
+    {
+      "slug": "web-exploitation",
+      "code": "WEB-301",
+      "title": "Modern Web Application Exploitation",
+      "subtitle": "Break it in the lab, so you can defend it in production",
+      "summary": "This is a hands-on course on how modern web applications break, and how to fix them. It is built from the Modern Web Application Development and Exploitation course I assessed as Exam Architect at…",
+      "description": "This is a hands-on course on how modern web applications break, and how to fix them. It is built from the\n*Modern Web Application Development and Exploitation* course I assessed as Exam Architect at Amrita,\nincluding the 7-scenario CTF used as its end-semester exam.\n\nEvery lesson follows the same loop: **understand** the mechanism, **exploit** it in a safe lab,\nthen **fix** it in code. Nothing here should ever be pointed at a system you don't own or have\nwritten permission to test.",
+      "level": "Intermediate",
+      "duration": "14 hours",
+      "color": "#b26bff",
+      "tags": [
+        "web",
+        "owasp",
+        "appsec",
+        "ctf"
+      ],
+      "instructor": "I Pavanraja (p1r3x)",
+      "outcomes": [
+        "Read and craft raw HTTP requests, and explain how state is kept with cookies and sessions",
+        "Intercept, modify and replay traffic with browser DevTools and Burp Suite",
+        "Find, exploit and fix SQL injection, XSS, CSRF, path traversal and IDOR in a lab",
+        "Write clear, reproducible vulnerability reports with a fix for each finding",
+        "Solve a multi-stage web CTF end to end"
+      ],
+      "prerequisites": [
+        "Basic HTML and JavaScript (you can read a simple web page's source)",
+        "Comfortable on a Linux command line",
+        "A laptop that can run Docker for the lab machines"
+      ],
+      "order": 1,
+      "updated": "2026-11-14",
+      "modules": [
+        {
+          "title": "Foundations of the web",
+          "summary": "How browsers and servers really talk, and the tools we'll use to watch them do it.",
+          "lessons": [
+            {
+              "slug": "how-the-web-talks",
+              "title": "How the web talks: HTTP",
+              "n": "1.1",
+              "available": true,
+              "summary": "Every web attack starts with a request. Learn to read and write HTTP by hand.",
+              "minutes": 15,
+              "words": 455,
+              "objectives": [
+                "Describe the structure of an HTTP request and response",
+                "Explain what methods, status codes and headers are for",
+                "Send raw requests with curl and read the full response"
+              ]
+            },
+            {
+              "slug": "cookies-and-sessions",
+              "title": "Cookies & sessions",
+              "n": "1.2",
+              "available": true,
+              "summary": "HTTP forgets you after every request. Cookies are how the web remembers, and how attackers impersonate you.",
+              "minutes": 18,
+              "words": 494,
+              "objectives": [
+                "Explain how session cookies turn stateless HTTP into a logged-in experience",
+                "Read and evaluate cookie attributes (HttpOnly, Secure, SameSite, Path, Expires)",
+                "Spot common session-handling mistakes in a lab application"
+              ]
+            },
+            {
+              "slug": "browser-devtools",
+              "title": "Your first tool: browser DevTools",
+              "n": "1.3",
+              "available": false
+            },
+            {
+              "slug": "burp-suite-setup",
+              "title": "Intercepting traffic with Burp Suite",
+              "n": "1.4",
+              "available": false
+            }
+          ],
+          "n": 1
+        },
+        {
+          "title": "Injection",
+          "summary": "When user input becomes code.",
+          "lessons": [
+            {
+              "slug": "sql-injection-basics",
+              "title": "SQL injection: the basics",
+              "n": "2.1",
+              "available": true,
+              "summary": "When user input is pasted into a database query, the user gets to write part of your SQL.",
+              "minutes": 22,
+              "words": 481,
+              "objectives": [
+                "Explain why string-built SQL queries are injectable",
+                "Confirm and exploit a basic SQL injection in a lab login form",
+                "Fix the bug with parameterized queries, and explain why escaping alone isn't enough"
+              ]
+            },
+            {
+              "slug": "blind-sql-injection",
+              "title": "Blind SQL injection",
+              "n": "2.2",
+              "available": false
+            },
+            {
+              "slug": "command-injection",
+              "title": "OS command injection",
+              "n": "2.3",
+              "available": false
+            }
+          ],
+          "n": 2
+        },
+        {
+          "title": "Client-side attacks",
+          "summary": "Attacks that run in the victim's browser.",
+          "lessons": [
+            {
+              "slug": "cross-site-scripting",
+              "title": "Cross-site scripting (XSS)",
+              "n": "3.1",
+              "available": false
+            },
+            {
+              "slug": "csrf",
+              "title": "Cross-site request forgery (CSRF)",
+              "n": "3.2",
+              "available": false
+            },
+            {
+              "slug": "cookie-manipulation",
+              "title": "Cookie manipulation & session hijacking",
+              "n": "3.3",
+              "available": false
+            }
+          ],
+          "n": 3
+        },
+        {
+          "title": "Server-side & access control",
+          "summary": "Reading files you shouldn't, and seeing data that isn't yours.",
+          "lessons": [
+            {
+              "slug": "path-traversal",
+              "title": "Path traversal",
+              "n": "4.1",
+              "available": false
+            },
+            {
+              "slug": "idor",
+              "title": "Insecure direct object references (IDOR)",
+              "n": "4.2",
+              "available": false
+            },
+            {
+              "slug": "file-upload",
+              "title": "Unrestricted file upload",
+              "n": "4.3",
+              "available": false
+            }
+          ],
+          "n": 4
+        },
+        {
+          "title": "Capstone",
+          "summary": "",
+          "lessons": [
+            {
+              "slug": "ctf-capstone",
+              "title": "Capstone: the 7-challenge CTF",
+              "n": "5.1",
+              "available": false
+            }
+          ],
+          "n": 5
+        }
+      ],
+      "stats": {
+        "modules": 5,
+        "lessons": 14,
+        "available": 3,
+        "minutes": 55,
+        "words": 1430
+      }
+    }
+  ]
+}

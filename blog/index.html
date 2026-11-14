@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal · p1r3x</title>
+  <meta name="description" content="The journal of I Pavanraja (p1r3x): field notes and write-ups on breaking and defending IoT, 5G RedCap, ICS/SCADA and privacy-preserving AI.">
+  <meta name="theme-color" content="#05080a">
+  <link rel="icon" type="image/png" href="../assets/img/profile.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/blog.css">
+</head>
+
+<body class="page-journal">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="crt" aria-hidden="true"></div>
+
+  <!-- ============ NAV (shared with every page) ============ -->
+  <header class="nav">
+    <a href="../index.html" class="logo" aria-label="p1r3x home">p1r<span class="three">3</span>x<span class="cursor">_</span></a>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html#about"><span>01.</span>whoami</a></li>
+        <li><a href="../index.html#research"><span>02.</span>research</a></li>
+        <li><a href="../index.html#experience"><span>03.</span>experience</a></li>
+        <li><a href="../index.html#projects"><span>04.</span>projects</a></li>
+        <li><a href="../index.html#arsenal"><span>05.</span>arsenal</a></li>
+        <li><a href="../certifications.html"><span>06.</span>certs</a></li>
+        <li><a href="../academy/"><span>07.</span>academy</a></li>
+        <li><a href="./" class="active"><span>08.</span>blog</a></li>
+        <li><a href="../index.html#contact"><span>09.</span>contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-status"><span class="dot"></span><span>journald · ACTIVE</span><span id="clock">--:--:-- IST</span></div>
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle menu" aria-expanded="false">[ menu ]</button>
+  </header>
+
+  <main class="jr">
+    <!-- ================= INDEX: tmux session ================= -->
+    <section id="v-index" class="jr-index" hidden>
+      <div class="sec-head reveal">
+        <span class="sec-id">0x0A // /var/log/journal</span>
+        <h1 class="sec-title" data-scramble>The <span class="hl">Journal</span></h1>
+        <p class="sec-sub">Field notes, write-ups and lab logs, streamed straight from <code>~/journal</code>.
+          Use the mouse, or drive it like a terminal: <kbd>j</kbd>/<kbd>k</kbd> to move, <kbd>↵</kbd> to open, <kbd>/</kbd> to grep.</p>
+      </div>
+
+      <div class="tmux panel corners" data-stub-state="Detached" data-stub="[detached (from session journal)]" data-reopen="tmux attach -t journal">
+        <div class="panel-bar"><i></i><i></i><i></i><span class="title">tmux · session "journal" · p1r3x@lab</span></div>
+
+        <div class="tmux-body">
+          <!-- pane 0: journalctl -->
+          <div class="pane pane-log">
+            <div class="pane-label">0:journalctl</div>
+            <form class="searchbar" id="searchbar" role="search" autocomplete="off">
+              <label for="search" class="sb-ps">grep -rni</label>
+              <input id="search" type="search" spellcheck="false" placeholder="search every word of every post: keyword, &quot;exact phrase&quot;, tool, CVE…" aria-label="Search the journal">
+              <span class="sb-count" id="sb-count"></span>
+              <button type="button" class="sb-fzf" id="sb-fzf" title="Open fuzzy finder (Ctrl+K)">fzf <kbd>ctrl+k</kbd></button>
+            </form>
+            <div class="cmdline"><span class="ps">p1r3x@lab:~/journal$</span> <span id="log-cmd"></span><span class="blk" id="log-caret"></span></div>
+            <div class="log-head" id="log-head"></div>
+            <ol class="log" id="log" role="listbox" aria-label="Posts"></ol>
+            <div class="log-empty" id="log-empty" hidden></div>
+            <div class="log-tail" id="log-tail" hidden><span class="blk"></span> watching <b>~/journal</b> for new entries…</div>
+          </div>
+
+          <!-- right column -->
+          <div class="pane-side">
+            <div class="pane pane-fetch">
+              <div class="pane-label">1:neofetch</div>
+<pre class="tux" aria-hidden="true">    .--.
+   |o_o |
+   |:_/ |
+  //   \ \
+ (|     | )
+/'\_   _/`\
+\___)=(___/</pre>
+              <dl class="fetch" id="fetch"></dl>
+            </div>
+
+            <div class="pane pane-preview">
+              <div class="pane-label">2:preview</div>
+              <div id="preview"></div>
+            </div>
+
+            <div class="pane pane-tags">
+              <div class="pane-label">3:htop --tags</div>
+              <div id="meters"></div>
+              <div class="loadavg" id="loadavg"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- shell -->
+        <div class="shell">
+          <div class="shell-out" id="shell-out" aria-live="polite"></div>
+          <form class="shell-in" id="shell-form" autocomplete="off">
+            <label for="shell" class="ps">p1r3x@lab:~/journal$</label>
+            <input id="shell" type="text" spellcheck="false" placeholder="type help, or grep <word>, tag <name>, cat <n>">
+          </form>
+        </div>
+
+        <!-- tmux status bar -->
+        <div class="tmux-status">
+          <span class="ts-session">[journal]</span>
+          <span class="ts-win on">0:log*</span>
+          <span class="ts-win">1:read</span>
+          <span class="ts-hint">j/k move · ↵ open · / search · ctrl+k fzf · t tags · esc reset</span>
+          <span class="ts-right"><span id="ts-filter">filter: none</span> │ "p1r3x@lab" <span id="ts-clock">--:--</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ARTICLE: man page in less ================= -->
+    <article id="v-post" class="pager" hidden>
+      <div class="pager-win panel corners" data-min-label="[1]+ Stopped · click to fg">
+        <div class="panel-bar"><i></i><i></i><i></i><span class="title" id="pager-title">less</span></div>
+
+        <div class="pager-body">
+          <a class="cd-back" href="./">← cd ..</a>
+
+          <header class="man">
+            <div class="man-top"><span>JOURNAL(7)</span><span>p1r3x Field Notes</span><span>JOURNAL(7)</span></div>
+
+            <h2 class="man-sec">NAME</h2>
+            <div class="man-ind">
+              <div class="man-slug" id="m-slug"></div>
+              <h1 class="man-title" id="m-title"></h1>
+            </div>
+
+            <h2 class="man-sec">SYNOPSIS</h2>
+            <p class="man-ind man-syn" id="m-syn"></p>
+
+            <h2 class="man-sec">DETAILS</h2>
+            <div class="man-ind man-meta" id="m-meta"></div>
+
+            <div class="man-ind man-share">
+              <button type="button" class="cmdbtn" id="sh-copy">$ xclip -sel c &lt;url&gt;</button>
+              <a class="cmdbtn" id="sh-x" target="_blank" rel="noopener">$ share --x</a>
+              <a class="cmdbtn" id="sh-in" target="_blank" rel="noopener">$ share --linkedin</a>
+              <button type="button" class="cmdbtn alt" id="find-btn">/ find in post</button>
+              <button type="button" class="cmdbtn alt" data-fzf>$ fzf ~/journal <kbd>ctrl+k</kbd></button>
+            </div>
+          </header>
+
+          <figure class="man-cover" id="m-cover" hidden></figure>
+
+          <div class="pager-grid">
+            <div class="prose" id="prose"></div>
+            <aside class="tree" id="tree" aria-label="Contents"></aside>
+          </div>
+
+          <div class="end-mark"><span>(END)</span></div>
+          <nav class="pn" id="pn"></nav>
+        </div>
+      </div>
+    </article>
+
+    <!-- ================= ERROR ================= -->
+    <section id="v-error" class="jr-error" hidden></section>
+  </main>
+
+  <!-- less status line (article only) -->
+  <div class="less-status" id="less-status" hidden>
+    <span class="ls-file" id="ls-file"></span>
+    <span class="ls-pos" id="ls-pos"></span>
+    <span class="ls-match" id="ls-match" hidden></span>
+    <form class="ls-find" id="ls-find" hidden autocomplete="off"><span>/</span><input id="ls-input" spellcheck="false" aria-label="Find in this post"></form>
+    <span class="ls-keys" id="ls-keys">/ find · n/N next · ctrl+k search all · z zen · j/k scroll · g/G top/end · q quit</span>
+  </div>
+
+  <!-- ============ fzf: search the whole journal (ctrl+k) ============ -->
+  <div class="fzf" id="fzf" hidden role="dialog" aria-modal="true" aria-label="Search the journal">
+    <div class="fzf-backdrop" data-close></div>
+    <div class="fzf-win panel corners">
+      <div class="panel-bar"><i></i><i></i><i></i><span class="title">fzf --preview 'less {}' ~/journal</span><button type="button" class="fzf-x" data-close aria-label="Close">esc ✕</button></div>
+      <div class="fzf-body">
+        <ol class="fzf-list" id="fzf-list" role="listbox"></ol>
+        <div class="fzf-preview" id="fzf-preview"></div>
+      </div>
+      <div class="fzf-info"><span id="fzf-count">0/0</span><span class="fzf-rule"></span><span class="fzf-keys">↑↓ select · ↵ open · tab next post · esc close</span></div>
+      <form class="fzf-prompt" id="fzf-form" autocomplete="off"><span>&gt;</span><input id="fzf-input" spellcheck="false" placeholder="search titles, tags, headings and full text…" aria-label="Search query"></form>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER (shared) ============ -->
+  <footer>
+<pre class="ascii" aria-hidden="true">██████╗  ██╗██████╗ ██████╗ ██╗  ██╗
+██╔══██╗███║██╔══██╗╚════██╗╚██╗██╔╝
+██████╔╝╚██║██████╔╝ █████╔╝ ╚███╔╝
+██╔═══╝  ██║██╔══██╗ ╚═══██╗ ██╔██╗
+██║      ██║██║  ██║██████╔╝██╔╝ ██╗
+╚═╝      ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝</pre>
+    <p>© <span id="year">2026</span> I Pavanraja (p1r3x) · <a href="../index.html">portfolio</a> · <a href="../certifications.html">credentials</a> · <a href="../academy/">academy</a> · <a href="./">journal</a></p>
+  </footer>
+
+  <a href="#" class="to-top" id="to-top" aria-label="Back to top">▲</a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/blog.js"></script>
+</body>
+</html>

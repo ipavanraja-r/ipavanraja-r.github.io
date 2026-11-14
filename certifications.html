@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credential Vault · p1r3x</title>
+  <meta name="description" content="Verified security certifications of I Pavanraja (p1r3x): offensive security, mobile AppSec, hardware security and graph analytics.">
+  <meta name="theme-color" content="#05080a">
+  <link rel="icon" type="image/png" href="assets/img/profile.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/certs.css">
+</head>
+
+<body class="page-certs">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="crt" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="index.html" class="logo" aria-label="p1r3x home">p1r<span class="three">3</span>x<span class="cursor">_</span></a>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about"><span>01.</span>whoami</a></li>
+        <li><a href="index.html#research"><span>02.</span>research</a></li>
+        <li><a href="index.html#experience"><span>03.</span>experience</a></li>
+        <li><a href="index.html#projects"><span>04.</span>projects</a></li>
+        <li><a href="index.html#arsenal"><span>05.</span>arsenal</a></li>
+        <li><a href="certifications.html" class="active"><span>06.</span>certs</a></li>
+        <li><a href="academy/"><span>07.</span>academy</a></li>
+        <li><a href="blog/"><span>08.</span>blog</a></li>
+        <li><a href="index.html#contact"><span>09.</span>contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-status"><span class="dot"></span><span>VAULT · UNSEALED</span><span id="clock">--:--:-- IST</span></div>
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle menu" aria-expanded="false">[ menu ]</button>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="vault-hero">
+      <div class="dial" aria-hidden="true">
+        <svg viewBox="0 0 400 400">
+          <defs>
+            <linearGradient id="dg" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#00ff9c" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#2de2ff" stop-opacity=".2"/>
+            </linearGradient>
+          </defs>
+          <g class="ring r1"><circle cx="200" cy="200" r="190" fill="none" stroke="url(#dg)" stroke-width="1" stroke-dasharray="2 6"/></g>
+          <g class="ring r2"><circle cx="200" cy="200" r="160" fill="none" stroke="#00ff9c" stroke-opacity=".35" stroke-width="10" stroke-dasharray="1 9"/></g>
+          <g class="ring r3"><circle cx="200" cy="200" r="128" fill="none" stroke="#00ff9c" stroke-opacity=".5" stroke-width="1.5" stroke-dasharray="60 20 10 20"/></g>
+          <g class="ring r4"><circle cx="200" cy="200" r="98" fill="none" stroke="#ff2a4a" stroke-opacity=".6" stroke-width="1" stroke-dasharray="4 4"/></g>
+          <circle cx="200" cy="200" r="64" fill="rgba(0,255,156,.05)" stroke="#00ff9c" stroke-opacity=".6"/>
+        </svg>
+        <div class="dial-core"><span id="dial-count">00</span><small>KEYS</small></div>
+      </div>
+
+      <div class="vault-copy reveal">
+        <span class="sec-id">0x07 // CREDENTIAL VAULT</span>
+        <h1 class="vault-title" data-scramble>Proof of <span class="hl">Work.</span></h1>
+        <p class="vault-sub">
+          Certifications earned alongside PhD research and lab work. Each one is a key I've cut by hand,
+          across offensive security, mobile AppSec, hardware and graph analytics.
+        </p>
+        <div class="vault-stats" id="vault-stats"></div>
+      </div>
+    </section>
+
+    <!-- ============ VAULT GRID ============ -->
+    <section class="vault">
+      <div class="vault-bar">
+        <div class="filters" id="cert-filters" role="tablist"></div>
+        <div class="vault-hint">◇ hover to inspect · click to open</div>
+      </div>
+      <div class="vault-grid" id="vault-grid"></div>
+    </section>
+
+    <!-- ============ TIMELINE ============ -->
+    <section class="vault-timeline">
+      <div class="sec-head">
+        <span class="sec-id">0x08 // ACQUISITION LOG</span>
+        <h2 class="sec-title">Timeline</h2>
+      </div>
+      <div class="tl" id="cert-tl"></div>
+    </section>
+
+    <section class="vault-cta">
+      <div class="panel corners cta-box">
+        <div>
+          <h3>Need proof beyond the badge?</h3>
+          <p>Credential IDs and verification links are available on request, or check the live profiles below.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn solid" href="https://tryhackme.com/p/p1r3x" target="_blank" rel="noopener">TryHackMe ↗</a>
+          <a class="btn" href="https://www.linkedin.com/in/p1r3x" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn" href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- detail modal -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card panel corners">
+      <div class="panel-bar"><i></i><i></i><i></i><span class="title" id="m-path">cat credential.pem</span><button class="m-close" data-close aria-label="Close">✕</button></div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer>
+<pre class="ascii" aria-hidden="true">██████╗  ██╗██████╗ ██████╗ ██╗  ██╗
+██╔══██╗███║██╔══██╗╚════██╗╚██╗██╔╝
+██████╔╝╚██║██████╔╝ █████╔╝ ╚███╔╝
+██╔═══╝  ██║██╔══██╗ ╚═══██╗ ██╔██╗
+██║      ██║██║  ██║██████╔╝██╔╝ ██╗
+╚═╝      ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝</pre>
+    <p>© <span id="year">2026</span> I Pavanraja (p1r3x) · <a href="index.html">portfolio</a> · <a href="certifications.html">credentials</a> · <a href="academy/">academy</a> · <a href="blog/">journal</a></p>
+  </footer>
+
+  <a href="#" class="to-top" id="to-top" aria-label="Back to top">▲</a>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/data/certs.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/certs.js"></script>
+</body>
+</html>

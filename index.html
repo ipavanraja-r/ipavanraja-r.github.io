@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Pavanraja · p1r3x</title>
+  <meta name="description" content="I Pavanraja (p1r3x) — PhD Researcher at Amrita Vishwa Vidyapeetham and Security Research Engineer at Amrita Cyber Labs. 5G RedCap, IoT, ICS/SCADA and privacy-preserving federated learning security research.">
+  <meta name="keywords" content="Pavanraja, p1r3x, cybersecurity researcher, PhD, Amrita, 5G RedCap, IoT security, ICS, SCADA, federated learning, VAPT">
+  <meta name="author" content="I Pavanraja">
+  <meta name="theme-color" content="#05080a">
+  <meta property="og:title" content="I Pavanraja · p1r3x — Cybersecurity Researcher">
+  <meta property="og:description" content="PhD Researcher @ Amrita · Security Research Engineer @ Amrita Cyber Labs. 5G RedCap, IoT & critical-infrastructure security.">
+  <meta property="og:image" content="assets/img/profile.png">
+  <link rel="icon" type="image/png" href="assets/img/profile.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="booting">
+
+  <!-- ============ BOOT SEQUENCE ============ -->
+  <div id="boot" aria-hidden="true">
+    <button id="boot-skip" type="button">[ skip ▸ ]</button>
+    <div id="boot-log"></div>
+  </div>
+
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="crt" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <a href="#home" class="logo" aria-label="p1r3x home">p1r<span class="three">3</span>x<span class="cursor">_</span></a>
+
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about"><span>01.</span>whoami</a></li>
+        <li><a href="#research"><span>02.</span>research</a></li>
+        <li><a href="#experience"><span>03.</span>experience</a></li>
+        <li><a href="#projects"><span>04.</span>projects</a></li>
+        <li><a href="#arsenal"><span>05.</span>arsenal</a></li>
+        <li><a href="certifications.html" class="ext"><span>06.</span>certs<sup>↗</sup></a></li>
+        <li><a href="academy/" class="ext"><span>07.</span>academy<sup>↗</sup></a></li>
+        <li><a href="blog/" class="ext"><span>08.</span>blog<sup>↗</sup></a></li>
+        <li><a href="#contact"><span>09.</span>contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-status">
+      <span class="dot"></span>
+      <span>TLS 1.3 · SECURE</span>
+      <span id="clock">--:--:-- IST</span>
+    </div>
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle menu" aria-expanded="false">[ menu ]</button>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero-left">
+        <div class="hero-tag"><span class="dot"></span> STATUS: ACTIVELY RESEARCHING</div>
+
+        <h1 class="hero-name">
+          <span class="glitch" data-text="I Pavan">I Pavan</span><br>
+          <span class="glitch hl" data-text="Raja">Raja</span>
+        </h1>
+        <p class="hero-handle">aka <b>p1r3x</b> &nbsp;//&nbsp; Bengaluru, India &nbsp;//&nbsp; ORCID 0009-0009-1648-3645</p>
+
+        <p class="hero-role"><span class="prompt">&gt;</span> <span id="typed"></span><span class="typed-cursor"></span></p>
+
+        <p class="hero-desc">
+          Breaking and hardening the protocols that run <strong>smart cities</strong>,
+          <strong>critical infrastructure</strong> and <strong>connected devices</strong> —
+          from 5G RedCap radio procedures to SCADA control loops and privacy-preserving AI.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn solid">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+            View Ops
+          </a>
+          <a href="PavanRaja_resume.pdf" class="btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+            Resume.pdf
+          </a>
+        </div>
+
+        <div class="socials">
+          <a href="https://github.com/ipavanraja-r" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/p1r3x" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 110-4.2 2.1 2.1 0 010 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>
+          </a>
+          <a href="https://tryhackme.com/p/p1r3x" target="_blank" rel="noopener" aria-label="TryHackMe" title="TryHackMe — Top 1%">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/></svg>
+          </a>
+          <a href="https://orcid.org/0009-0009-1648-3645" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 100 24 12 12 0 000-24zM8.1 17.6H6.6V7.1h1.5v10.5zM7.4 6.2a1 1 0 110-2 1 1 0 010 2zm3 1h4c3.9 0 5.5 2.8 5.5 5.2 0 2.7-2.1 5.2-5.5 5.2h-4V7.2zm1.5 1.3v7.7h2.4c3.4 0 4.1-2.6 4.1-3.9 0-2.1-1.3-3.9-4.2-3.9h-2.3z"/></svg>
+          </a>
+          <a href="mailto:ipavanraja02@gmail.com" aria-label="Email" title="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="M2 6l10 7 10-7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- interactive terminal -->
+      <div class="terminal panel corners">
+        <div class="panel-bar"><i></i><i></i><i></i><span class="title">p1r3x@amrita-lab: ~</span></div>
+        <div class="term-body" id="term-body">
+          <div id="term-out"></div>
+          <div class="term-input-row">
+            <span class="ps"><span class="mono-green">p1r3x</span><span class="dim">@</span><span class="cyan">lab</span><span class="dim">:</span><span class="amber">~</span><span class="dim">$</span></span>
+            <input id="term-input" type="text" autocomplete="off" spellcheck="false" aria-label="Terminal input">
+          </div>
+        </div>
+        <div class="term-hint">
+          <span>try →</span>
+          <button data-cmd="whoami">whoami</button>
+          <button data-cmd="roles">roles</button>
+          <button data-cmd="research">research</button>
+          <button data-cmd="projects">projects</button>
+          <button data-cmd="blog">blog</button>
+          <button data-cmd="help">help</button>
+        </div>
+      </div>
+
+      <div class="scroll-ind">SCROLL</div>
+    </section>
+
+    <!-- ============ TICKER ============ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track" id="ticker">
+        <span>PhD Researcher · <b>Amrita Vishwa Vidyapeetham</b></span>
+        <span>Security Research Engineer · <b>Amrita Cyber Labs</b></span>
+        <span>Published · <b>Future Internet 18(3):118</b></span>
+        <span>TryHackMe · <b>Global Top 1%</b></span>
+        <span>5G RedCap · <b>1Rx / HD-FDD / eDRX attack surface</b></span>
+        <span>ICS/SCADA · <b>DHALSIM + EPANET</b></span>
+        <span>Federated Learning · <b>FedProx + DP + SMPC</b></span>
+        <span>CTF Author · <b>7 custom exploit scenarios</b></span>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about">
+      <div class="sec-head reveal">
+        <span class="sec-id">0x01 // WHOAMI</span>
+        <h2 class="sec-title" data-scramble>Researcher. <span class="hl">Breaker.</span> Builder.</h2>
+      </div>
+
+      <div class="about-grid">
+        <aside class="id-card panel corners reveal">
+          <div class="portrait" id="portrait" data-mode="ascii" title="Hover or tap to decrypt">
+            <div class="portrait-bg" aria-hidden="true"></div>
+            <img id="portrait-src" class="portrait-img" src="assets/img/profile.png" alt="Portrait of I Pavanraja">
+            <canvas id="portrait-canvas" aria-hidden="true"></canvas>
+            <div class="reticle" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="hud hud-tl" aria-hidden="true">SUBJECT // P1R3X</div>
+            <div class="hud hud-tr" aria-hidden="true"><span class="dot"></span> LIVE</div>
+            <div class="hud hud-bl" aria-hidden="true">MATCH <b>99.7%</b></div>
+            <div class="portrait-modes" role="group" aria-label="Portrait style">
+              <button type="button" data-mode="ascii" class="on">ascii</button>
+              <button type="button" data-mode="photo">decrypt</button>
+            </div>
+          </div>
+          <dl class="id-meta">
+            <div><dt>name</dt><dd>I Pavanraja</dd></div>
+            <div><dt>handle</dt><dd class="red">p1r3x</dd></div>
+            <div><dt>clearance</dt><dd>PhD Researcher</dd></div>
+            <div><dt>unit</dt><dd>Amrita Cyber Labs</dd></div>
+            <div><dt>base</dt><dd>Bengaluru · Kerala, IN</dd></div>
+            <div><dt>languages</dt><dd>EN · HI · KN · TA · TE · ML</dd></div>
+          </dl>
+        </aside>
+
+        <div class="about-text reveal">
+          <p>
+            I'm <strong>I Pavanraja</strong> — known online as <span class="hl">p1r3x</span>. I work where
+            networks meet the physical world: the cellular IoT links, industrial controllers and city-scale data
+            pipelines that quietly keep everything running, and that attackers increasingly target.
+          </p>
+          <p>
+            My research focuses on <strong>IoT security, ICS protection and cyber-physical systems</strong>:
+            finding protocol-level weaknesses, measuring their real impact on testbeds, and turning the results into
+            defenses that scale to smart cities and national infrastructure.
+          </p>
+
+          <div class="roles">
+            <article class="role-card panel">
+              <div class="proc"><span class="dot"></span> PID 0001 · RUNNING</div>
+              <h3>PhD Researcher</h3>
+              <div class="org">Amrita Vishwa Vidyapeetham</div>
+              <p>Doctoral research in cybersecurity: IoT ecosystems, critical infrastructure and privacy-preserving intelligence sharing for smart cities.</p>
+            </article>
+            <article class="role-card panel">
+              <div class="proc"><span class="dot"></span> PID 0002 · RUNNING</div>
+              <h3>Security Research Engineer</h3>
+              <div class="org">Amrita Cyber Labs</div>
+              <p>Building attack testbeds and hunting protocol-level vulnerabilities in 5G RedCap and IoT deployments.</p>
+            </article>
+          </div>
+
+          <div class="stats">
+            <div class="stat"><div class="num"><span data-count="1">0</span>%</div><div class="lbl">TryHackMe Global</div></div>
+            <div class="stat"><div class="num"><span data-count="45">0</span>pp</div><div class="lbl">5G RedCap Survey</div></div>
+            <div class="stat"><div class="num"><span data-count="7">0</span></div><div class="lbl">CTF Exploit Labs</div></div>
+            <div class="stat"><div class="num"><span data-count="5">0</span>+</div><div class="lbl">Certifications</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH ============ -->
+    <section id="research">
+      <div class="sec-head reveal">
+        <span class="sec-id">0x02 // ATTACK SURFACE</span>
+        <h2 class="sec-title" data-scramble>Research <span class="hl">Focus</span></h2>
+        <p class="sec-sub">The four fronts I'm working on: understand the protocol, build the testbed, break it, then defend it.</p>
+      </div>
+
+      <div class="focus-grid">
+        <article class="focus panel reveal">
+          <span class="idx">[01]</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 12v10M8 22h8"/><circle cx="12" cy="10" r="2"/><path d="M7.8 5.8a6 6 0 000 8.4M16.2 5.8a6 6 0 010 8.4M4.9 2.9a10 10 0 000 14.2M19.1 2.9a10 10 0 010 14.2"/></svg></div>
+          <h3>5G RedCap &amp; Cellular IoT</h3>
+          <p>Protocol-level attacks on reduced-capability devices: 1Rx and HD-FDD physical-layer weaknesses and eDRX power-saving abuse leading to resource exhaustion and energy drain.</p>
+        </article>
+        <article class="focus panel reveal">
+          <span class="idx">[02]</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 21h20M4 21V10l5 3V10l5 3V6h6v15"/><path d="M17 9h0M17 13h0M17 17h0"/></svg></div>
+          <h3>ICS / SCADA Defense</h3>
+          <p>Cyber-physical attack simulation on water distribution systems: sensor spoofing and command injection, plus AI-driven anomaly detection for critical infrastructure.</p>
+        </article>
+        <article class="focus panel reveal">
+          <span class="idx">[03]</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M8 10V7a4 4 0 018 0v3"/><circle cx="12" cy="15.5" r="1.5"/></svg></div>
+          <h3>Privacy-Preserving FL</h3>
+          <p>Federated learning for smart-city threat intelligence with differential privacy, secure multi-party aggregation and a blockchain integrity layer.</p>
+        </article>
+        <article class="focus panel reveal">
+          <span class="idx">[04]</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3H7a2 2 0 00-2 2v2a2 2 0 01-2 2 2 2 0 012 2v2a2 2 0 002 2h2M15 3h2a2 2 0 012 2v2a2 2 0 002 2 2 2 0 00-2 2v2a2 2 0 01-2 2h-2"/><path d="M10 9l4 6"/></svg></div>
+          <h3>AI for Vuln Intelligence</h3>
+          <p>NLP models that read raw vulnerability descriptions and predict full CVSS vectors and severity, cutting manual triage time for threat-intel teams.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience">
+      <div class="sec-head reveal">
+        <span class="sec-id">0x03 // GIT LOG --ALL</span>
+        <h2 class="sec-title" data-scramble>Experience <span class="hl">Trace</span></h2>
+      </div>
+
+      <div class="timeline">
+        <div class="t-item live reveal">
+          <div class="t-card panel">
+            <div class="t-head">
+              <h3>Security Research Engineer <span class="badge-live">LIVE</span></h3>
+              <span class="t-date">Jul 2025 — Present</span>
+            </div>
+            <div class="t-org">Amrita Cyber Labs · Amrita Center for Cybersecurity Systems &amp; Networks · Kerala</div>
+            <ul>
+              <li>Building and running the <b>5G RedCap &amp; IoT Security</b> research track, focused on finding protocol-level vulnerabilities.</li>
+              <li>Built a full <b>5G Standalone RedCap testbed</b> (Open5GS + UERANSIM) with Prometheus/Grafana telemetry to measure attack impact.</li>
+              <li>Leading the <b>Privacy-Preserving Intelligence Sharing in Smart City</b> project, combining federated learning and blockchain.</li>
+              <li>Joined the lab as a Security Research Intern in Jul 2025.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="t-item live reveal">
+          <div class="t-card panel">
+            <div class="t-head">
+              <h3>PhD Researcher — Cybersecurity <span class="badge-live">LIVE</span></h3>
+              <span class="t-date">Present</span>
+            </div>
+            <div class="t-org">Amrita Vishwa Vidyapeetham</div>
+            <ul>
+              <li>Doctoral research on <b>IoT security, ICS protection and cyber-physical systems</b>.</li>
+              <li>Goal: scalable, data-aware defenses for <b>smart cities, critical infrastructure and connected devices</b>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="t-item reveal">
+          <div class="t-card panel">
+            <div class="t-head">
+              <h3>Graduate Teaching Assistant</h3>
+              <span class="t-date">Oct 2025 — Dec 2025</span>
+            </div>
+            <div class="t-org">Amrita Center for Cybersecurity Systems &amp; Networks</div>
+            <ul>
+              <li><b>Exam Architect</b> for “Modern Web Application Development and Exploitation”.</li>
+              <li>Engineered and deployed an <b>End-Semester CTF exam</b> with 7 custom exploit scenarios: SQLi, XSS, path traversal and more.</li>
+              <li>Mentored students on JavaScript code analysis and advanced cookie-manipulation techniques.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="t-item reveal">
+          <div class="t-card panel">
+            <div class="t-head">
+              <h3>Full-Stack Web Developer Intern</h3>
+              <span class="t-date">Aug 2023 — Sep 2023</span>
+            </div>
+            <div class="t-org">Varcons Technologies · Bengaluru</div>
+            <ul>
+              <li>Led a team building dynamic web templates with <b>secure coding practices</b> across the SDLC.</li>
+              <li>Reduced vulnerabilities in development workflows while integrating databases.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-grid">
+        <div class="edu panel reveal">
+          <div class="yr">// Present</div>
+          <h4>Ph.D. — Cybersecurity</h4>
+          <p>Amrita Vishwa Vidyapeetham</p>
+        </div>
+        <div class="edu panel reveal">
+          <div class="yr">// 2024 — 2026</div>
+          <h4>M.Tech — Cybersecurity Systems &amp; Networks</h4>
+          <p>Amrita Vishwa Vidyapeetham, Kerala</p>
+        </div>
+        <div class="edu panel reveal">
+          <div class="yr">// 2020 — 2024</div>
+          <h4>B.E. — Computer Science &amp; Engineering</h4>
+          <p>Sri Sairam College of Engineering, Bengaluru</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects">
+      <div class="sec-head reveal">
+        <span class="sec-id">0x04 // OPERATIONS</span>
+        <h2 class="sec-title" data-scramble>Selected <span class="hl">Projects</span></h2>
+      </div>
+
+      <div class="filters reveal" role="tablist">
+        <button class="on" data-filter="all">./all</button>
+        <button data-filter="research">./research</button>
+        <button data-filter="offsec">./offsec</button>
+        <button data-filter="ai">./ai-ml</button>
+        <button data-filter="iot">./iot-ics</button>
+      </div>
+
+      <div class="proj-grid">
+        <article class="proj panel reveal" data-cat="research ai iot">
+          <div class="proj-top">
+            <canvas data-viz="mesh"></canvas>
+            <span class="cat">DISSERTATION</span><span class="when">2024 — NOW</span><span class="big">01</span>
+          </div>
+          <div class="proj-body">
+            <h3>Privacy-Preserving Intelligence Sharing in Smart Cities</h3>
+            <p>A production-grade federated learning system where three smart-city clients collaborate on threat detection without exposing raw data.</p>
+            <ul>
+              <li>FedProx training across 3 simulated city clients on ToN_IoT</li>
+              <li>Differential privacy via Opacus: gradient clipping and noise addition</li>
+              <li>SMPC secure aggregation, so the server never sees raw client updates</li>
+              <li>Hyperledger Fabric ledger records global model hashes for integrity</li>
+            </ul>
+            <div class="tags"><span class="tag">NVFLARE</span><span class="tag">PyTorch</span><span class="tag">Opacus</span><span class="tag">Hyperledger Fabric</span><span class="tag">SMPC</span></div>
+            <div class="proj-foot"><span class="sev">status: <span class="mono-green">active</span></span><a href="https://github.com/ipavanraja-r" target="_blank" rel="noopener">source ↗</a></div>
+          </div>
+        </article>
+
+        <article class="proj panel reveal" data-cat="research offsec iot">
+          <div class="proj-top">
+            <canvas data-viz="wave"></canvas>
+            <span class="cat">5G · PROTOCOL</span><span class="when">JAN — JUN 2025</span><span class="big">02</span>
+          </div>
+          <div class="proj-body">
+            <h3>5G RedCap Testbed &amp; Attack Vectors</h3>
+            <p>A complete 5G Standalone RedCap testbed for finding and measuring protocol-level vulnerabilities in low-power IoT.</p>
+            <ul>
+              <li>Open5GS core + UERANSIM gNB/UE on Ubuntu 22.04</li>
+              <li>Physical-layer (1Rx, HD-FDD) and power-saving (eDRX) exploit analysis</li>
+              <li>Prometheus + Grafana pipeline to quantify resource exhaustion and energy drain</li>
+              <li>Produced a 45-page survey, published in <i>Future Internet</i></li>
+            </ul>
+            <div class="tags"><span class="tag">Open5GS</span><span class="tag">UERANSIM</span><span class="tag">Prometheus</span><span class="tag">Grafana</span></div>
+            <div class="proj-foot"><span class="sev">status: <span class="mono-green">published</span></span><a href="https://doi.org/10.3390/fi18030118" target="_blank" rel="noopener">paper ↗</a></div>
+          </div>
+        </article>
+
+        <article class="proj panel reveal" data-cat="research ai">
+          <div class="proj-top">
+            <canvas data-viz="bars"></canvas>
+            <span class="cat">AI · NLP</span><span class="when">2024 — NOW</span><span class="big">03</span>
+          </div>
+          <div class="proj-body">
+            <h3>Context-Aware CVSS Predictor</h3>
+            <p>BERT-based models that predict the full CVSS base vector and severity score straight from a vulnerability's description.</p>
+            <ul>
+              <li>Eight independent BERT classifiers, one per CVSS base metric</li>
+              <li>Regression head for fine-grained severity scoring</li>
+              <li>Tokenization and lemmatization pipeline over the Kaggle CVSS v3.0 corpus</li>
+            </ul>
+            <div class="tags"><span class="tag">BERT</span><span class="tag">DistilBERT</span><span class="tag">Python</span><span class="tag">NLP</span></div>
+            <div class="proj-foot"><span class="sev">status: <span class="mono-green">active</span></span><a href="https://github.com/ipavanraja-r" target="_blank" rel="noopener">source ↗</a></div>
+          </div>
+        </article>
+
+        <article class="proj panel reveal" data-cat="research ai iot">
+          <div class="proj-top">
+            <canvas data-viz="scope"></canvas>
+            <span class="cat">ICS · SCADA</span><span class="when">JAN — MAY 2025</span><span class="big">04</span>
+          </div>
+          <div class="proj-body">
+            <h3>AI-Driven Threat Detection for Water Distribution</h3>
+            <p>Anomaly detection for critical infrastructure, trained on high-fidelity cyber-physical attack simulations.</p>
+            <ul>
+              <li>DHALSIM + EPANET + MiniCPS for realistic simulation of the plant and its network</li>
+              <li>Sensor-spoofing and command-injection attack scenarios</li>
+              <li>Benchmarked accuracy, precision and F1 against rule-based and statistical detectors</li>
+            </ul>
+            <div class="tags"><span class="tag">DHALSIM</span><span class="tag">EPANET</span><span class="tag">MiniCPS</span><span class="tag">Python</span></div>
+            <div class="proj-foot"><span class="sev">status: <span class="dim">complete</span></span><a href="https://github.com/ipavanraja-r" target="_blank" rel="noopener">source ↗</a></div>
+          </div>
+        </article>
+
+        <article class="proj panel reveal" data-cat="offsec">
+          <div class="proj-top">
+            <canvas data-viz="hex"></canvas>
+            <span class="cat">CTF · WEB EXPLOIT</span><span class="when">OCT — DEC 2025</span><span class="big">05</span>
+          </div>
+          <div class="proj-body">
+            <h3>End-Semester CTF Exam Platform</h3>
+            <p>A hands-on exploitation exam that replaced written tests for a university web-security course.</p>
+            <ul>
+              <li>7 custom vulnerable scenarios: SQL injection, XSS, path traversal and more</li>
+              <li>Built and deployed as the course's Exam Architect</li>
+              <li>Focused on JavaScript code analysis and cookie manipulation</li>
+            </ul>
+            <div class="tags"><span class="tag">Web Exploitation</span><span class="tag">Docker</span><span class="tag">OWASP Top 10</span></div>
+            <div class="proj-foot"><span class="sev">status: <span class="dim">deployed</span></span><a href="https://github.com/ipavanraja-r" target="_blank" rel="noopener">profile ↗</a></div>
+          </div>
+        </article>
+
+        <article class="proj panel reveal" data-cat="iot">
+          <div class="proj-top">
+            <canvas data-viz="radar"></canvas>
+            <span class="cat">IOT · RFID</span><span class="when">2023 — 2024</span><span class="big">06</span>
+          </div>
+          <div class="proj-body">
+            <h3>IoT Bus Ticketing &amp; Monitoring System</h3>
+            <p>A real-time IoT system for tracking bus arrivals and stops, with RFID ticketing.</p>
+            <ul>
+              <li>Live bus arrival and location monitoring</li>
+              <li>RFID and mobile ticketing with in-app recharge</li>
+              <li>Central portal for drivers and administrators</li>
+            </ul>
+            <div class="tags"><span class="tag">RFID</span><span class="tag">Microcontrollers</span><span class="tag">Mobile App</span></div>
+            <div class="proj-foot"><span class="sev">status: <span class="dim">complete</span></span><a href="https://github.com/ipavanraja-r" target="_blank" rel="noopener">source ↗</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section id="publications">
+      <div class="sec-head reveal">
+        <span class="sec-id">0x05 // CITATIONS</span>
+        <h2 class="sec-title" data-scramble>Publications</h2>
+      </div>
+
+      <article class="pub panel corners reveal">
+        <div class="pub-badge"><div>J.1<small>JOURNAL</small></div></div>
+        <div>
+          <h3>A Comprehensive Survey on 5G RedCap: Technologies, Security Vulnerabilities, and Attack Vectors</h3>
+          <p class="authors"><b>Pavan Raja I.</b>, Kurunandan Jain, Hari N. N., Sethu Subramanian N., Prabhakar Krishnan</p>
+          <p class="venue">Future Internet · Vol. 18, Issue 3, Art. 118 · 2026 · MDPI</p>
+          <div class="pub-actions">
+            <a class="btn" href="https://doi.org/10.3390/fi18030118" target="_blank" rel="noopener">DOI ↗</a>
+            <button class="btn" id="bib-toggle" type="button">{ BibTeX }</button>
+            <button class="btn" id="bib-copy" type="button">Copy cite</button>
+          </div>
+          <pre class="bibtex" id="bibtex">@article{pavanraja2026redcap,
+  title   = {A Comprehensive Survey on 5G RedCap: Technologies,
+             Security Vulnerabilities, and Attack Vectors},
+  author  = {I., Pavan Raja and Jain, Kurunandan and N. N., Hari
+             and N., Sethu Subramanian and Krishnan, Prabhakar},
+  journal = {Future Internet},
+  volume  = {18},
+  number  = {3},
+  pages   = {118},
+  year    = {2026},
+  doi     = {10.3390/fi18030118}
+}</pre>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ ARSENAL ============ -->
+    <section id="arsenal">
+      <div class="sec-head reveal">
+        <span class="sec-id">0x06 // LSMOD</span>
+        <h2 class="sec-title" data-scramble>The <span class="hl">Arsenal</span></h2>
+        <p class="sec-sub">Loaded modules: the tools, techniques and domains I use every day.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill panel reveal">
+          <h3>offensive / red team</h3>
+          <div class="chips"><span class="chip">VAPT</span><span class="chip">Metasploit</span><span class="chip">Burp Suite</span><span class="chip">Nmap</span><span class="chip">OWASP Top 10</span><span class="chip">Exploit Dev (ASM / C)</span><span class="chip">Red Teaming</span></div>
+        </div>
+        <div class="skill panel reveal">
+          <h3>mobile &amp; api</h3>
+          <div class="chips"><span class="chip">Android AppSec</span><span class="chip">iOS AppSec</span><span class="chip">API Hacking (CAPIE)</span><span class="chip">Web Services</span></div>
+        </div>
+        <div class="skill panel reveal">
+          <h3>research domains</h3>
+          <div class="chips"><span class="chip">5G RedCap</span><span class="chip">IoT Security</span><span class="chip">SCADA / ICS</span><span class="chip">Cyber-Physical Systems</span><span class="chip">Federated Learning</span><span class="chip">Differential Privacy</span><span class="chip">SMPC</span></div>
+        </div>
+        <div class="skill panel reveal">
+          <h3>defense &amp; analytics</h3>
+          <div class="chips"><span class="chip">Incident Response</span><span class="chip">Splunk</span><span class="chip">Log Analysis</span><span class="chip">Autopsy</span><span class="chip">Digital Forensics</span><span class="chip">Neo4j Graph Analytics</span></div>
+        </div>
+        <div class="skill panel reveal">
+          <h3>reverse engineering</h3>
+          <div class="chips"><span class="chip">Static Analysis</span><span class="chip">Dynamic Analysis</span><span class="chip">Malware Analysis</span><span class="chip">x64dbg</span><span class="chip">PE Studio</span><span class="chip">Hardware Security</span></div>
+        </div>
+        <div class="skill panel reveal">
+          <h3>systems / code / compliance</h3>
+          <div class="chips"><span class="chip">Python</span><span class="chip">C</span><span class="chip">Java</span><span class="chip">Bash</span><span class="chip">Docker</span><span class="chip">Hyperledger Fabric</span><span class="chip">OS Internals</span><span class="chip">NIST CSF</span><span class="chip">ISO/IEC 27001</span></div>
+        </div>
+      </div>
+
+      <div class="sec-head reveal" style="margin-top:80px">
+        <span class="sec-id">0x07 // KEYRING</span>
+        <h2 class="sec-title" data-scramble>Certifications</h2>
+      </div>
+
+      <div class="cert-grid" id="cert-strip"></div>
+      <div class="vault-link reveal">
+        <a class="btn solid" href="certifications.html">Open the Credential Vault ▸</a>
+        <span class="dim">holographic cards · verification links · acquisition timeline</span>
+      </div>
+    </section>
+
+    <!-- ============ LATEST POSTS ============ -->
+    <!-- ============ ACADEMY ============ -->
+    <section id="academy" hidden>
+      <div class="sec-head reveal">
+        <span class="sec-id">0x08 // ~/academy</span>
+        <h2 class="sec-title" data-scramble>The <span class="hl">Academy</span></h2>
+        <p class="sec-sub">Structured courses for students: a full syllabus up front, lessons that read like chapters of a book.</p>
+      </div>
+      <div class="tail panel corners reveal" data-stub-state="Done" data-stub="apt list ~/academy" data-reopen="apt list ~/academy">
+        <div class="panel-bar"><i></i><i></i><i></i><span class="title">apt list --courses ~/academy</span></div>
+        <div class="tail-body">
+          <div class="tail-cmd"><span class="mono-green">student@academy:~$</span> apt list --courses</div>
+          <div class="dim" style="font-size:12px;margin-bottom:6px">Listing… Done</div>
+          <ol class="tail-list apt-list" id="academy-list"></ol>
+        </div>
+      </div>
+      <div class="vault-link reveal">
+        <a class="btn solid" href="academy/">Open the Academy ▸</a>
+        <span class="dim">courses → chapters → lessons · progress saved in your browser</span>
+      </div>
+    </section>
+
+    <section id="latest" hidden>
+      <div class="sec-head reveal">
+        <span class="sec-id">0x09 // /var/log/journal</span>
+        <h2 class="sec-title" data-scramble>From the <span class="hl">Journal</span></h2>
+        <p class="sec-sub">Field notes on breaking and defending IoT, 5G and critical infrastructure.</p>
+      </div>
+      <div class="tail panel corners reveal" data-stub-state="Interrupt" data-stub="tail -f ~/journal  (^C)" data-reopen="tail -f ~/journal">
+        <div class="panel-bar"><i></i><i></i><i></i><span class="title">tail -n 3 -f ~/journal</span></div>
+        <div class="tail-body">
+          <div class="tail-cmd"><span class="mono-green">p1r3x@lab:~$</span> journalctl -u journal.service -n 3 --reverse</div>
+          <ol class="tail-list" id="latest-list"></ol>
+          <div class="tail-foot"><span class="typed-cursor"></span> watching for new entries…</div>
+        </div>
+      </div>
+      <div class="vault-link reveal">
+        <a class="btn solid" href="blog/">Open the Journal ▸</a>
+        <span class="dim">tmux session · grep &amp; tag filters · man-page reader</span>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact">
+      <div class="sec-head reveal">
+        <span class="sec-id">0x0A // OPEN CHANNEL</span>
+        <h2 class="sec-title" data-scramble>Establish <span class="hl">Contact</span></h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info panel corners reveal">
+          <h3>Research collabs, talks, or a good bug? Let's talk.</h3>
+          <p>Open to research collaborations, industry partnerships on IoT, 5G and ICS security, and speaking or CTF events.</p>
+          <ul class="links">
+            <li><a href="mailto:ipavanraja02@gmail.com"><span>mail</span><span>ipavanraja02@gmail.com ↗</span></a></li>
+            <li><a href="https://www.linkedin.com/in/p1r3x" target="_blank" rel="noopener"><span>linkedin</span><span>/in/p1r3x ↗</span></a></li>
+            <li><a href="https://github.com/ipavanraja-r" target="_blank" rel="noopener"><span>github</span><span>ipavanraja-r ↗</span></a></li>
+            <li><a href="https://tryhackme.com/p/p1r3x" target="_blank" rel="noopener"><span>tryhackme</span><span>p1r3x · top 1% ↗</span></a></li>
+            <li><a href="https://orcid.org/0009-0009-1648-3645" target="_blank" rel="noopener"><span>orcid</span><span>0009-0009-1648-3645 ↗</span></a></li>
+          </ul>
+        </div>
+
+        <div class="form panel reveal" data-stub-state="Terminated" data-stub="./send_message.sh --encrypt  (^C · your draft is kept)" data-reopen="./send_message.sh">
+          <div class="panel-bar"><i></i><i></i><i></i><span class="title">./send_message.sh --encrypt</span></div>
+          <form id="contact-form" action="https://formsubmit.co/ipavanraja02@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New message via p1r3x portfolio">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="field"><label for="f-name">name</label><input id="f-name" name="name" type="text" required placeholder="Alice"></div>
+            <div class="field"><label for="f-email">email</label><input id="f-email" name="email" type="email" required placeholder="alice@example.org"></div>
+            <div class="field"><label for="f-msg">payload</label><textarea id="f-msg" name="message" rows="5" required placeholder="Hey p1r3x, ..."></textarea></div>
+            <button class="btn solid" type="submit">Transmit ▸</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+<pre class="ascii" aria-hidden="true">██████╗  ██╗██████╗ ██████╗ ██╗  ██╗
+██╔══██╗███║██╔══██╗╚════██╗╚██╗██╔╝
+██████╔╝╚██║██████╔╝ █████╔╝ ╚███╔╝
+██╔═══╝  ██║██╔══██╗ ╚═══██╗ ██╔██╗
+██║      ██║██║  ██║██████╔╝██╔╝ ██╗
+╚═╝      ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝</pre>
+    <p>© <span id="year">2026</span> I Pavanraja (p1r3x) · <a href="index.html">portfolio</a> · <a href="certifications.html">credentials</a> · <a href="academy/">academy</a> · <a href="blog/">journal</a></p>
+    <p class="fp">session fingerprint: <span id="fp">--</span></p>
+  </footer>
+
+  <a href="#home" class="to-top" id="to-top" aria-label="Back to top">▲</a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/data/certs.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

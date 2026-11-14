@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academy (preview) · p1r3x</title>
+  <meta name="description" content="The p1r3x Academy: structured cybersecurity courses for students by I Pavanraja. Every course has a full syllabus with lessons that read like chapters of a book.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#05080a">
+  <link rel="icon" type="image/png" href="../assets/img/profile.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/blog.css">
+  <link rel="stylesheet" href="../assets/css/academy.css">
+</head>
+
+<body class="page-academy">
+  <div id="progress-top" aria-hidden="true"></div>
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="crt" aria-hidden="true"></div>
+
+  <!-- ============ NAV (shared with every page) ============ -->
+  <header class="nav">
+    <a href="../index.html" class="logo" aria-label="p1r3x home">p1r<span class="three">3</span>x<span class="cursor">_</span></a>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html#about"><span>01.</span>whoami</a></li>
+        <li><a href="../index.html#research"><span>02.</span>research</a></li>
+        <li><a href="../index.html#experience"><span>03.</span>experience</a></li>
+        <li><a href="../index.html#projects"><span>04.</span>projects</a></li>
+        <li><a href="../index.html#arsenal"><span>05.</span>arsenal</a></li>
+        <li><a href="../certifications.html"><span>06.</span>certs</a></li>
+        <li><a href="./" class="active"><span>07.</span>academy</a></li>
+        <li><a href="../blog/"><span>08.</span>blog</a></li>
+        <li><a href="../index.html#contact"><span>09.</span>contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-status"><span class="dot"></span><span>CLASS · IN SESSION</span><span id="clock">--:--:-- IST</span></div>
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle menu" aria-expanded="false">[ menu ]</button>
+  </header>
+
+  <main class="ac">
+    <!-- ================= LIBRARY ================= -->
+    <section id="v-library" class="ac-library" hidden>
+      <div class="sec-head reveal">
+        <span class="sec-id">0x0B // ~/academy</span>
+        <h1 class="sec-title" data-scramble>The <span class="hl">Academy</span></h1>
+        <p class="sec-sub">Structured cybersecurity courses for students. Every course is a book: a full syllabus up front,
+          and lessons that read like chapters, added as they're written.</p>
+      </div>
+
+      <div class="lib-stats reveal" id="lib-stats"></div>
+
+      <div class="lib-bar reveal">
+        <div class="cmdline"><span class="ps">student@academy:~$</span> ls -l ~/academy/courses <span id="lib-filter-cmd"></span></div>
+        <div class="lib-tools">
+          <div class="lib-levels" id="lib-levels" role="tablist"></div>
+          <label class="lib-search"><span>grep</span><input id="lib-q" type="search" placeholder="find a course or lesson…" autocomplete="off"></label>
+        </div>
+      </div>
+
+      <div class="shelf" id="shelf"></div>
+      <p class="lib-empty" id="lib-empty" hidden></p>
+    </section>
+
+    <!-- ================= COURSE ================= -->
+    <section id="v-course" class="ac-course" hidden>
+      <a class="cd-back" href="preview.html">← cd ~/academy</a>
+      <div class="course-hero">
+        <div class="book-wrap"><div class="book" id="c-book"></div></div>
+        <div class="course-info">
+          <div class="course-code" id="c-code"></div>
+          <h1 class="course-title" id="c-title"></h1>
+          <p class="course-sub" id="c-sub"></p>
+          <div class="course-meta" id="c-meta"></div>
+          <div class="course-progress" id="c-progress"></div>
+          <div class="course-cta" id="c-cta"></div>
+        </div>
+      </div>
+
+      <div class="course-grid">
+        <div class="course-main">
+          <div class="panel corners c-about">
+            <div class="panel-bar"><i></i><i></i><i></i><span class="title">cat README.md</span></div>
+            <div class="c-about-body prose" id="c-desc"></div>
+          </div>
+
+          <div class="panel corners syllabus">
+            <div class="panel-bar"><i></i><i></i><i></i><span class="title" id="c-syl-title">cat SYLLABUS.md</span></div>
+            <div class="syl-legend">
+              <span><b class="st done">✓</b> completed</span><span><b class="st ok">●</b> available</span><span><b class="st plan">○</b> coming soon</span>
+              <button type="button" class="syl-toggle" id="syl-toggle">collapse all</button>
+            </div>
+            <div class="syl-body" id="c-syllabus"></div>
+          </div>
+        </div>
+
+        <aside class="course-side">
+          <div class="panel side-box">
+            <div class="panel-bar"><i></i><i></i><i></i><span class="title">outcomes.txt</span></div>
+            <ul class="ticks" id="c-outcomes"></ul>
+          </div>
+          <div class="panel side-box">
+            <div class="panel-bar"><i></i><i></i><i></i><span class="title">requirements.txt</span></div>
+            <ul class="ticks req" id="c-prereq"></ul>
+          </div>
+          <div class="panel side-box">
+            <div class="panel-bar"><i></i><i></i><i></i><span class="title">instructor</span></div>
+            <div class="instructor">
+              <img src="../assets/img/profile.png" alt="">
+              <div><b id="c-instructor">I Pavanraja</b><span>PhD Researcher, Amrita Vishwa Vidyapeetham<br>Security Research Engineer, Amrita Cyber Labs</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= LESSON ================= -->
+    <section id="v-lesson" class="ac-lesson" hidden>
+      <button type="button" class="drawer-btn" id="drawer-btn" aria-expanded="false">☰ syllabus</button>
+      <div class="lesson-layout">
+        <aside class="lesson-nav" id="lesson-nav">
+          <a class="ln-course" id="ln-course" href="#"></a>
+          <div class="ln-progress" id="ln-progress"></div>
+          <nav class="ln-tree" id="ln-tree" aria-label="Course syllabus"></nav>
+        </aside>
+
+        <article class="lesson">
+          <div class="panel corners lesson-win" data-min-label="lesson paused · click to resume">
+            <div class="panel-bar"><i></i><i></i><i></i><span class="title" id="l-path">info</span></div>
+            <div class="lesson-body">
+              <div class="crumbs" id="l-crumbs"></div>
+              <div class="l-kicker" id="l-kicker"></div>
+              <h1 class="l-title" id="l-title"></h1>
+              <p class="l-summary" id="l-summary"></p>
+              <div class="l-meta" id="l-meta"></div>
+
+              <div class="l-boxes">
+                <div class="objectives" id="l-objectives" hidden></div>
+                <div class="onpage" id="l-onpage" hidden></div>
+              </div>
+
+              <div class="prose" id="l-prose"></div>
+
+              <div class="l-complete">
+                <button type="button" class="btn" id="l-done">✓ Mark lesson complete</button>
+                <span class="dim" id="l-done-note"></span>
+              </div>
+              <nav class="l-pn" id="l-pn"></nav>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="v-error" class="ac-error" hidden></section>
+  </main>
+
+  <!-- ============ FOOTER (shared) ============ -->
+  <footer>
+<pre class="ascii" aria-hidden="true">██████╗  ██╗██████╗ ██████╗ ██╗  ██╗
+██╔══██╗███║██╔══██╗╚════██╗╚██╗██╔╝
+██████╔╝╚██║██████╔╝ █████╔╝ ╚███╔╝
+██╔═══╝  ██║██╔══██╗ ╚═══██╗ ██╔██╗
+██║      ██║██║  ██║██████╔╝██╔╝ ██╗
+╚═╝      ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝</pre>
+    <p>© <span id="year">2026</span> I Pavanraja (p1r3x) · <a href="../index.html">portfolio</a> · <a href="../certifications.html">credentials</a> · <a href="./">academy</a> · <a href="../blog/">journal</a></p>
+  </footer>
+
+  <a href="#" class="to-top" id="to-top" aria-label="Back to top">▲</a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/academy.js"></script>
+</body>
+</html>
